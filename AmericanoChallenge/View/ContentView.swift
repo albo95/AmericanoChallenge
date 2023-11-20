@@ -8,54 +8,56 @@
 import SwiftUI
 import SwiftData
 
-struct ContentView: View {
+struct AllNotesView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
-
+    @Query private var notes: [Note]
+    
     var body: some View {
         NavigationSplitView {
             List {
-                ForEach(items) { item in
+                ForEach(notes, id: \.id) { note in
                     NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
+                        Text("\(note.title)")
                     } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
+                        Text("\(note.title)")
                     }
                 }
-                .onDelete(perform: deleteItems)
+                .onDelete(perform: deleteNotes)
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()
                 }
                 ToolbarItem {
-                    Button(action: addItem) {
+                    Button(action: {
+                        addNote(title: "", content: [])
+                    }) {
                         Label("Add Item", systemImage: "plus")
                     }
                 }
             }
+
         } detail: {
             Text("Select an item")
         }
     }
-
-    private func addItem() {
+    
+    private func addNote(title: String, content: [NoteElement]) {
         withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
+            let newNote = Note(id: UUID(), title: title, date: Date.now, content: content)
+            modelContext.insert(newNote)
         }
     }
 
-    private func deleteItems(offsets: IndexSet) {
+    private func deleteNotes(offsets: IndexSet) {
         withAnimation {
             for index in offsets {
-                modelContext.delete(items[index])
+                modelContext.delete(notes[index])
             }
         }
     }
 }
 
-#Preview {
-    ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
-}
+//#Preview {
+//    //AllNotesView()
+//}

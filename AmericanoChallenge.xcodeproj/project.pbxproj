@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		62913E032B038B4500EEFDAB /* AmericanoChallengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62913E022B038B4500EEFDAB /* AmericanoChallengeApp.swift */; };
 		62913E052B038B4500EEFDAB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62913E042B038B4500EEFDAB /* ContentView.swift */; };
-		62913E072B038B4500EEFDAB /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62913E062B038B4500EEFDAB /* Item.swift */; };
+		62913E072B038B4500EEFDAB /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62913E062B038B4500EEFDAB /* Note.swift */; };
 		62913E092B038B4600EEFDAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62913E082B038B4600EEFDAB /* Assets.xcassets */; };
 		62913E0C2B038B4600EEFDAB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62913E0B2B038B4600EEFDAB /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -18,7 +18,7 @@
 		62913DFF2B038B4500EEFDAB /* AmericanoChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AmericanoChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62913E022B038B4500EEFDAB /* AmericanoChallengeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmericanoChallengeApp.swift; sourceTree = "<group>"; };
 		62913E042B038B4500EEFDAB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		62913E062B038B4500EEFDAB /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		62913E062B038B4500EEFDAB /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		62913E082B038B4600EEFDAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		62913E0B2B038B4600EEFDAB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -54,8 +54,8 @@
 			isa = PBXGroup;
 			children = (
 				62913E022B038B4500EEFDAB /* AmericanoChallengeApp.swift */,
-				62913E042B038B4500EEFDAB /* ContentView.swift */,
-				62913E062B038B4500EEFDAB /* Item.swift */,
+				62D3121E2B0B5FE6003C539E /* View */,
+				62D3121D2B0B5FDD003C539E /* Model */,
 				62913E082B038B4600EEFDAB /* Assets.xcassets */,
 				62913E0A2B038B4600EEFDAB /* Preview Content */,
 			);
@@ -68,6 +68,22 @@
 				62913E0B2B038B4600EEFDAB /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		62D3121D2B0B5FDD003C539E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				62913E062B038B4500EEFDAB /* Note.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		62D3121E2B0B5FE6003C539E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				62913E042B038B4500EEFDAB /* ContentView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,7 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				62913E052B038B4500EEFDAB /* ContentView.swift in Sources */,
-				62913E072B038B4500EEFDAB /* Item.swift in Sources */,
+				62913E072B038B4500EEFDAB /* Note.swift in Sources */,
 				62913E032B038B4500EEFDAB /* AmericanoChallengeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
