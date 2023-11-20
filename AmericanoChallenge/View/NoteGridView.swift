@@ -12,35 +12,30 @@ import SwiftUI
 struct NoteGridView: View {
     var viewModel: NoteGridViewModel
     
-    let borderPadding: CGFloat = 10
-    let columnDistance: CGFloat = 20
-    let sectionHeaderToplPadding: CGFloat = 10
+    let sectionHeaderTopPadding: CGFloat = 10
     let notesPreviewVerticalPadding: CGFloat = 15
     let VerticalPadding: CGFloat = 30
     
-    
     var body: some View {
         let columns = [
-            GridItem(.flexible(), spacing: columnDistance),
-            GridItem(.flexible(), spacing: columnDistance),
-            GridItem(.flexible(), spacing: columnDistance)
+            GridItem(.flexible()),
+            GridItem(.flexible()),
+            GridItem(.flexible())
         ]
         
-        ScrollView {
-            LazyVGrid(
-                columns: columns) {
-                    ForEach(viewModel.sortedSectionKeys, id: \.self) { key in
-                        Section(
-                            header:SectionHeaderView(title: key).padding(.top, sectionHeaderToplPadding))
-                        {
-                            ForEach(viewModel.notesPreviews[key] ?? [], id: \.self) { notePreview in
-                                NotePreviewView(model: notePreview)
-                                    .padding(.bottom, notesPreviewVerticalPadding)
-                            }
+        LazyVGrid(
+            columns: columns) {
+                ForEach(viewModel.sortedSectionKeys, id: \.self) { key in
+                    Section(
+                        header:SectionHeaderView(title: key).padding(.top, sectionHeaderTopPadding))
+                    {
+                        ForEach(viewModel.notesPreviews[key] ?? [], id: \.self) { notePreview in
+                            NotePreviewView(model: notePreview)
+                                .padding(.bottom, notesPreviewVerticalPadding)
                         }
                     }
                 }
-        }.padding(.horizontal, borderPadding)
+            }
     }
     
     struct SectionHeaderView: View{
