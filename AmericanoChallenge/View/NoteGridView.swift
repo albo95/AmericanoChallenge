@@ -59,11 +59,11 @@ struct NoteGridView: View {
 
 #Preview {
     if let imgData = Image.getImageDataFromAsset("imgProva") {
-        return NoteGridView(viewModel: NoteGridViewModel(notesPreviews: ["Novembre":[NotePreviewViewModel(previewImage: imgData, title: "Note Name", date: "Yesterday"), NotePreviewViewModel(previewImage: imgData, title: "Note Name", date: "Yesterday"),NotePreviewViewModel(previewImage: imgData, title: "Note Name", date: "Yesterday"),NotePreviewViewModel(previewImage: imgData, title: "Note Name", date: "Yesterday")],
+        return NoteGridView(viewModel: NoteGridViewModel(notesPreviews: [.november:[NotePreviewViewModel(previewImage: imgData, title: "Note Name", date: "Yesterday"), NotePreviewViewModel(previewImage: imgData, title: "Note Name", date: "Yesterday"),NotePreviewViewModel(previewImage: imgData, title: "Note Name", date: "Yesterday"),NotePreviewViewModel(previewImage: imgData, title: "Note Name", date: "Yesterday")],
                                                                          
-                                                                         "Ieri":[NotePreviewViewModel(previewImage: imgData, title: "Note Name", date: "Yesterday"), NotePreviewViewModel(previewImage: imgData, title: "Note Name", date: "Yesterday"),NotePreviewViewModel(previewImage: imgData, title: "Note Name", date: "Yesterday"),NotePreviewViewModel(previewImage: imgData, title: "Note Name", date: "Yesterday")],
+            .yesterday:[NotePreviewViewModel(previewImage: imgData, title: "Note Name", date: "Yesterday"), NotePreviewViewModel(previewImage: imgData, title: "Note Name", date: "Yesterday"),NotePreviewViewModel(previewImage: imgData, title: "Note Name", date: "Yesterday"),NotePreviewViewModel(previewImage: imgData, title: "Note Name", date: "Yesterday")],
                                                                          
-                                                                         "2022":[NotePreviewViewModel(previewImage: imgData, title: "Note Name", date: "Yesterday"), NotePreviewViewModel(previewImage: imgData, title: "Note Name", date: "Yesterday"),NotePreviewViewModel(previewImage: imgData, title: "Note Name", date: "Yesterday"),NotePreviewViewModel(previewImage: imgData, title: "Note Name", date: "Yesterday")]
+            .today:[NotePreviewViewModel(previewImage: imgData, title: "Note Name", date: "Yesterday"), NotePreviewViewModel(previewImage: imgData, title: "Note Name", date: "Yesterday"),NotePreviewViewModel(previewImage: imgData, title: "Note Name", date: "Yesterday"),NotePreviewViewModel(previewImage: imgData, title: "Note Name", date: "Yesterday")]
                                                                         ]))
     } else {
         return AnyView(Text("Preview not available"))

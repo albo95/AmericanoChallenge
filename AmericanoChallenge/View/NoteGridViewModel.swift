@@ -10,7 +10,11 @@ import Foundation
 @Observable
 class NoteGridViewModel {
     var notesPreviews: [String: [NotePreviewViewModel]]
-    let predefinedOrder = ["Oggi", "Ieri", "Ultimi 7 giorni", "Ultimi 30 giorni", "Dicembre", "Novembre", "Ottobre", "Settembre", "Agosto", "Luglio", "Giugno", "Maggio", "Aprile", "Marzo"," Febbraio", "Gennaio"]
+    let predefinedOrder = {
+        var predefinedOrder: [String] = [.today, .yesterday, .lastSevenDays, .lastThirtyDays]
+        predefinedOrder.append(contentsOf: String.monthsOfTheYear)
+        return predefinedOrder
+       }()
     
     init(notesPreviews: [String: [NotePreviewViewModel]]) {
         self.notesPreviews = notesPreviews

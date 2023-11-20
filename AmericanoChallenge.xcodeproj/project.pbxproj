@@ -17,6 +17,7 @@
 		62D312272B0BADCD003C539E /* NoteGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D312262B0BADCD003C539E /* NoteGridView.swift */; };
 		62D312292B0BAE46003C539E /* NotePreviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D312282B0BAE46003C539E /* NotePreviewViewModel.swift */; };
 		62D3122C2B0BED54003C539E /* NoteGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D3122B2B0BED54003C539E /* NoteGridViewModel.swift */; };
+		62D3122E2B0BF74A003C539E /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D3122D2B0BF74A003C539E /* StringExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		62D312262B0BADCD003C539E /* NoteGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteGridView.swift; sourceTree = "<group>"; };
 		62D312282B0BAE46003C539E /* NotePreviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotePreviewViewModel.swift; sourceTree = "<group>"; };
 		62D3122B2B0BED54003C539E /* NoteGridViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteGridViewModel.swift; sourceTree = "<group>"; };
+		62D3122D2B0BF74A003C539E /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				62D312242B0B9DDA003C539E /* ImageExtension.swift */,
+				62D3122D2B0BF74A003C539E /* StringExtension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				62D3122C2B0BED54003C539E /* NoteGridViewModel.swift in Sources */,
 				62D312202B0B9AA7003C539E /* NotePreviewView.swift in Sources */,
 				62D312252B0B9DDA003C539E /* ImageExtension.swift in Sources */,
+				62D3122E2B0BF74A003C539E /* StringExtension.swift in Sources */,
 				62D312272B0BADCD003C539E /* NoteGridView.swift in Sources */,
 				62D312292B0BAE46003C539E /* NotePreviewViewModel.swift in Sources */,
 				62913E032B038B4500EEFDAB /* AmericanoChallengeApp.swift in Sources */,
