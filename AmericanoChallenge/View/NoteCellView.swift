@@ -24,12 +24,12 @@ struct NoteCellView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 7))
             }
             Text(title)
-                .foregroundStyle(.yellow)
-                .font(.largeTitle)
-                .fontWeight(.heavy)
-                .font(.custom("SFCompactDisplay-Bold", size: 36))                .lineLimit(1)
+                .foregroundStyle(.mainText)
+                .font(.headline)
+                .lineLimit(1)
             Text(date)
-                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                .foregroundStyle(.secondaryText)
+                .font(.subheadline)
                 .lineLimit(1)
         }.frame(width: 100)
     }
