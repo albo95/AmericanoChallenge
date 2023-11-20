@@ -11,9 +11,7 @@ import SwiftData
 @main
 struct AmericanoChallengeApp: App {
     var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Note.self,
-        ])
+        let schema = Schema([Note.self])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
         do {

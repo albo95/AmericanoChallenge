@@ -16,12 +16,14 @@ final class Note {
     var date: Date
     @Relationship(deleteRule: .cascade)
     var content: [NoteElement]
+    var previewImage: Data?
     
-    init(id: UUID, title: String, date: Date, content: [NoteElement] = []) {
+    init(id: UUID, title: String = "", date: Date = Date.now, content: [NoteElement] = [], previewImage: Data? = nil) {
         self.id = id
         self.title = title
         self.date = date
         self.content = content
+        self.previewImage = previewImage
     }
 }
 
