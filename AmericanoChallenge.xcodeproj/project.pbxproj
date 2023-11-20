@@ -12,8 +12,11 @@
 		62913E072B038B4500EEFDAB /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62913E062B038B4500EEFDAB /* Note.swift */; };
 		62913E092B038B4600EEFDAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62913E082B038B4600EEFDAB /* Assets.xcassets */; };
 		62913E0C2B038B4600EEFDAB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62913E0B2B038B4600EEFDAB /* Preview Assets.xcassets */; };
-		62D312202B0B9AA7003C539E /* NoteCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D3121F2B0B9AA7003C539E /* NoteCellView.swift */; };
+		62D312202B0B9AA7003C539E /* NotePreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D3121F2B0B9AA7003C539E /* NotePreviewView.swift */; };
 		62D312252B0B9DDA003C539E /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D312242B0B9DDA003C539E /* ImageExtension.swift */; };
+		62D312272B0BADCD003C539E /* NoteGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D312262B0BADCD003C539E /* NoteGridView.swift */; };
+		62D312292B0BAE46003C539E /* NotePreviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D312282B0BAE46003C539E /* NotePreviewViewModel.swift */; };
+		62D3122C2B0BED54003C539E /* NoteGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D3122B2B0BED54003C539E /* NoteGridViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,8 +26,11 @@
 		62913E062B038B4500EEFDAB /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		62913E082B038B4600EEFDAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		62913E0B2B038B4600EEFDAB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		62D3121F2B0B9AA7003C539E /* NoteCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCellView.swift; sourceTree = "<group>"; };
+		62D3121F2B0B9AA7003C539E /* NotePreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotePreviewView.swift; sourceTree = "<group>"; };
 		62D312242B0B9DDA003C539E /* ImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageExtension.swift; path = "../../../../../../Library/Mobile Documents/com~apple~CloudDocs/.Trash/ImageExtension.swift"; sourceTree = "<group>"; };
+		62D312262B0BADCD003C539E /* NoteGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteGridView.swift; sourceTree = "<group>"; };
+		62D312282B0BAE46003C539E /* NotePreviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotePreviewViewModel.swift; sourceTree = "<group>"; };
+		62D3122B2B0BED54003C539E /* NoteGridViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteGridViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,7 @@
 				62913E022B038B4500EEFDAB /* AmericanoChallengeApp.swift */,
 				62D312232B0B9B14003C539E /* Utils */,
 				62D3121E2B0B5FE6003C539E /* View */,
+				62D3122A2B0BAE4F003C539E /* ViewModel */,
 				62D3121D2B0B5FDD003C539E /* Model */,
 				62913E082B038B4600EEFDAB /* Assets.xcassets */,
 				62913E0A2B038B4600EEFDAB /* Preview Content */,
@@ -87,7 +94,9 @@
 			isa = PBXGroup;
 			children = (
 				62913E042B038B4500EEFDAB /* AllNotesView.swift */,
-				62D3121F2B0B9AA7003C539E /* NoteCellView.swift */,
+				62D312262B0BADCD003C539E /* NoteGridView.swift */,
+				62D3122B2B0BED54003C539E /* NoteGridViewModel.swift */,
+				62D3121F2B0B9AA7003C539E /* NotePreviewView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -98,6 +107,14 @@
 				62D312242B0B9DDA003C539E /* ImageExtension.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		62D3122A2B0BAE4F003C539E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				62D312282B0BAE46003C539E /* NotePreviewViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,8 +189,11 @@
 			files = (
 				62913E052B038B4500EEFDAB /* AllNotesView.swift in Sources */,
 				62913E072B038B4500EEFDAB /* Note.swift in Sources */,
-				62D312202B0B9AA7003C539E /* NoteCellView.swift in Sources */,
+				62D3122C2B0BED54003C539E /* NoteGridViewModel.swift in Sources */,
+				62D312202B0B9AA7003C539E /* NotePreviewView.swift in Sources */,
 				62D312252B0B9DDA003C539E /* ImageExtension.swift in Sources */,
+				62D312272B0BADCD003C539E /* NoteGridView.swift in Sources */,
+				62D312292B0BAE46003C539E /* NotePreviewViewModel.swift in Sources */,
 				62913E032B038B4500EEFDAB /* AmericanoChallengeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

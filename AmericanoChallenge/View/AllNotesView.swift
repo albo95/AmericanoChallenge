@@ -13,32 +13,11 @@ struct AllNotesView: View {
     @Query private var notes: [Note]
     
     var body: some View {
-        NavigationSplitView {
+        NavigationStack {
             List {
-                ForEach(notes, id: \.id) { note in
-                    NavigationLink {
-                        Text("\(note.title)")
-                    } label: {
-                        Text("\(note.title)")
-                    }
-                }
-                .onDelete(perform: deleteNotes)
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: {
-                        addNote(title: "", content: [])
-                    }) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
+            
             }
 
-        } detail: {
-            Text("Select an item")
         }
     }
     
@@ -58,6 +37,6 @@ struct AllNotesView: View {
     }
 }
 
-//#Preview {
-//    //AllNotesView()
-//}
+#Preview {
+    AllNotesView()
+}
