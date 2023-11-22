@@ -9,7 +9,7 @@ import Foundation
 
 @Observable
 class NoteGridViewModel {
-    var notesPreviews: [String: [NotePreviewViewModel]]
+    var notes: [String: [Note]]
     
     let predefinedOrder = {
         var predefinedOrder: [String] = [.today, .yesterday, .lastSevenDays, .lastThirtyDays]
@@ -17,13 +17,13 @@ class NoteGridViewModel {
         return predefinedOrder
        }()
     
-    init(notesPreviews: [String: [NotePreviewViewModel]]) {
-        self.notesPreviews = notesPreviews
+    init(notes: [String: [Note]]) {
+        self.notes = notes
     }
     
     var sortedSectionKeys: [String] {
-        let filteredPredefinedOrder = predefinedOrder.filter { notesPreviews.keys.contains($0) }
-        let yearKeys = notesPreviews.keys.filter { $0.isNumber }.sorted(by: >)
+        let filteredPredefinedOrder = predefinedOrder.filter { notes.keys.contains($0) }
+        let yearKeys = notes.keys.filter { $0.isNumber }.sorted(by: >)
         return filteredPredefinedOrder + yearKeys
     }
 }

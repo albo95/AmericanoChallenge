@@ -10,7 +10,7 @@ import SwiftData
 import SwiftUI
 
 @Model
-final class Note {
+final class Note: Hashable {
     @Attribute(.unique) var id = UUID()
     var title: String
     var date: Date
@@ -24,14 +24,6 @@ final class Note {
         self.date = date
         self.content = content
         self.previewImage = previewImage
-    }
-    
-    func toNotePreview() -> NotePreviewViewModel {
-        guard let previewImage else {
-            //TODO: modificare questa riga di codice
-            return NotePreviewViewModel(previewImage: Image.getImageDataFromAsset("imgProva") ?? Data(), title: self.title, date: self.date)
-        }
-        return NotePreviewViewModel(previewImage: previewImage, title: self.title, date: self.date)
     }
 }
 

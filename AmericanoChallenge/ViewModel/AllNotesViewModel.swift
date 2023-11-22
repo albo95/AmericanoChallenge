@@ -16,43 +16,37 @@ class AllNotesViewModel {
     @ObservationIgnored
     private let dataSource: ModelContainerDataManager
     private var allNotes: [Note] = []
-    private var allNotesPreviews: [NotePreviewViewModel] = []
     
     init(modelContainerDataManager: ModelContainerDataManager = ModelContainerDataManager.shared) {
         self.dataSource = modelContainerDataManager
         self.allNotes = modelContainerDataManager.fetchNotes()
-        createNotesPreviews()
         
         //TODO: togliere
         if let imgData = Image.getImageDataFromAsset("imgProva") {
-            allNotesPreviews = ViewProva.notesPreviewsProva(imgData: imgData)
-        }
-    }
-    
-    private func createNotesPreviews() {
-        for note in allNotes {
-            allNotesPreviews.append(note.toNotePreview())
+            allNotes = ViewProva.notesProva(imgData: imgData)
         }
     }
     
     func appendNote(_ note: Note) {
+        allNotes.append(note)
         dataSource.appendNote(note)
     }
     
     func removeNote(_ index: Int) {
+        allNotes.remove(at: index)
         dataSource.removeNote(allNotes[index])
     }
     
-    func getNotesPreviewsGridSections() -> [String: [NotePreviewViewModel]] {
-        var sections: [String: [NotePreviewViewModel]] = [:]
+    func getNotesPreviewsGridSections() -> [String: [Note]] {
+        var sections: [String: [Note]] = [:]
 
-        for notePreview in allNotesPreviews {
-            let sectionTitle = notePreview.date.getNotesGridSectionTitle()
+        for note in allNotes {
+            let sectionTitle = note.date.getNotesGridSectionTitle()
 
             if sections[sectionTitle] == nil {
-                sections[sectionTitle] = [notePreview]
+                sections[sectionTitle] = [note]
             } else {
-                sections[sectionTitle]?.append(notePreview)
+                sections[sectionTitle]?.append(note)
             }
         }
         return sections

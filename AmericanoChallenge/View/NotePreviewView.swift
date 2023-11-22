@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct NotePreviewView: View {
-    @State var model: NotePreviewViewModel
+    @State var note: Note
     
     let textWidthSize: CGFloat = 85
     let previewImageWidthSize: CGFloat = 90
@@ -19,20 +19,20 @@ struct NotePreviewView: View {
     var body: some View {
         VStack
         {
-            if let image = Image.createFromData(model.previewImage){
+            if let noteImage = note.previewImage, let image = Image.createFromData(noteImage){
                 image
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: previewImageWidthSize, height: previewImageHeightSize)
                     .clipShape(RoundedRectangle(cornerRadius: 7))
             }
-            Text(model.title)
+            Text(note.title)
                 .multilineTextAlignment(.center)
                 .foregroundStyle(.mainText)
                 .font(.headline)
                 .lineLimit(2)
                 .frame(width: textWidthSize)
-            Text(model.date.getNotePreviewDateLabel())
+            Text(note.date.getNotePreviewDateLabel())
                 .foregroundStyle(.secondaryText)
                 .font(.subheadline)
                 .lineLimit(1)
@@ -42,7 +42,7 @@ struct NotePreviewView: View {
 
 #Preview {
     if let imgData = Image.getImageDataFromAsset("imgProva") {
-        return AnyView(NotePreviewView(model: NotePreviewViewModel(previewImage: imgData, title: "Note", date: Date.createRandomDate())))
+        return AnyView(NotePreviewView(note: Note(id: UUID(), title: "Noteaa aaaa", date: Date.createRandomDate(), previewImage: imgData)))
     } else {
         return AnyView(Text("Preview not available"))
     }

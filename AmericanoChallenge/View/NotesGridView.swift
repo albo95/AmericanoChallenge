@@ -11,8 +11,8 @@ struct NotesGridView: View {
     var viewModel: NoteGridViewModel
     
     let sectionHeaderTopPadding: CGFloat = 10
-    let notesPreviewVerticalPadding: CGFloat = 15
-    let VerticalPadding: CGFloat = 30
+    let notesPreviewVerticalPadding: CGFloat = 5
+    let verticalPadding: CGFloat = 30
     
     var body: some View {
         let columns = [
@@ -21,19 +21,27 @@ struct NotesGridView: View {
             GridItem(.flexible())
         ]
         
-        LazyVGrid(
-            columns: columns) {
-                ForEach(viewModel.sortedSectionKeys, id: \.self) { key in
-                    Section(
-                        header:SectionHeaderView(title: key).padding(.top, sectionHeaderTopPadding))
-                    {
-                        ForEach(viewModel.notesPreviews[key] ?? [], id: \.self) { notePreview in
-                            NotePreviewView(model: notePreview)
-                                .padding(.bottom, notesPreviewVerticalPadding).frame(alignment: .top)
+        NavigationStack {
+            LazyVGrid(
+                columns: columns) {
+                    ForEach(viewModel.sortedSectionKeys, id: \.self) { key in
+                        Section(
+                            header:SectionHeaderView(title: key).padding(.top, sectionHeaderTopPadding))
+                        {
+                            ForEach(viewModel.notes[key] ?? [], id: \.self) { note in
+                                NavigationLink(value: note)
+                                {
+                                    NotePreviewView(note: note)
+                                        .padding(.bottom, notesPreviewVerticalPadding).frame(alignment: .top)
+                                }
+                            }
                         }
                     }
-                }
-            }
+                }.navigationDestination(for: Note.self, destination: {
+                    note in NoteView(note: note)
+                })
+        }
+        
     }
     
     struct SectionHeaderView: View{

@@ -15,19 +15,19 @@ extension Date {
         
         if calendar.isDateInToday(self) {
             let formatter = DateFormatter()
-            formatter.timeStyle = .short
+            formatter.dateFormat = "HH:mm"
             return formatter.string(from: self)
         }
         
         if calendar.isDateInYesterday(self) {
-            return .yesterday
+            return .yesterday.lowercased()
         }
         
         if let aWeekAgo = calendar.date(byAdding: .day, value: -7, to: now),
            self >= aWeekAgo {
             let formatter = DateFormatter()
             formatter.dateFormat = "EEEE"
-            return formatter.string(from: self)
+            return formatter.string(from: self).lowercased()
         }
         
         let formatter = DateFormatter()
@@ -40,13 +40,13 @@ extension Date {
         let now = Date()
         
         if calendar.isDateInToday(self) {
-            return "Today"
+            return .today
         } else if calendar.isDateInYesterday(self) {
-            return "Yesterday"
+            return .yesterday
         } else if let aWeekAgo = calendar.date(byAdding: .day, value: -7, to: now), self >= aWeekAgo {
-            return "Last 7 days"
+            return .lastSevenDays
         } else if let aMonthAgo = calendar.date(byAdding: .day, value: -30, to: now), self >= aMonthAgo {
-            return "Last 30 days"
+            return .lastThirtyDays
         } else if let aYearAgo = calendar.date(byAdding: .year, value: -1, to: now), self >= aYearAgo {
             let formatter = DateFormatter()
             formatter.dateFormat = "MMMM"
@@ -62,7 +62,7 @@ extension Date {
         let randomChoice = Int.random(in: 1...6)
         let calendar = Calendar.current
         let now = Date()
-
+        
         switch randomChoice {
         case 1:
             var components = calendar.dateComponents([.year, .month, .day], from: now)
@@ -83,7 +83,7 @@ extension Date {
             return calendar.date(byAdding: .day, value: Int.random(in: -365...0), to: pastYear)!
         }
     }
-
+    
     
 }
 

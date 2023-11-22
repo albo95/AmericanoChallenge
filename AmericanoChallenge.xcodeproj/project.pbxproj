@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		623DFECA2B0DF9360097FC04 /* ModelContainerDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623DFEC92B0DF9360097FC04 /* ModelContainerDataManager.swift */; };
-		623DFED02B0E00070097FC04 /* Prove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623DFECF2B0E00070097FC04 /* Prove.swift */; };
+		623DFED02B0E00070097FC04 /* ViewProva.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623DFECF2B0E00070097FC04 /* ViewProva.swift */; };
 		623DFED22B0E0E1A0097FC04 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623DFED12B0E0E1A0097FC04 /* DateExtension.swift */; };
+		623DFED42B0E8CF80097FC04 /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623DFED32B0E8CF80097FC04 /* NoteView.swift */; };
 		62913E032B038B4500EEFDAB /* AmericanoChallengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62913E022B038B4500EEFDAB /* AmericanoChallengeApp.swift */; };
 		62913E052B038B4500EEFDAB /* AllNotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62913E042B038B4500EEFDAB /* AllNotesView.swift */; };
 		62913E072B038B4500EEFDAB /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62913E062B038B4500EEFDAB /* Note.swift */; };
@@ -18,7 +19,6 @@
 		62D312202B0B9AA7003C539E /* NotePreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D3121F2B0B9AA7003C539E /* NotePreviewView.swift */; };
 		62D312252B0B9DDA003C539E /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D312242B0B9DDA003C539E /* ImageExtension.swift */; };
 		62D312272B0BADCD003C539E /* NotesGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D312262B0BADCD003C539E /* NotesGridView.swift */; };
-		62D312292B0BAE46003C539E /* NotePreviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D312282B0BAE46003C539E /* NotePreviewViewModel.swift */; };
 		62D3122C2B0BED54003C539E /* NoteGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D3122B2B0BED54003C539E /* NoteGridViewModel.swift */; };
 		62D3122E2B0BF74A003C539E /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D3122D2B0BF74A003C539E /* StringExtension.swift */; };
 		62D312302B0DF1F9003C539E /* AllNotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D3122F2B0DF1F9003C539E /* AllNotesViewModel.swift */; };
@@ -27,8 +27,9 @@
 /* Begin PBXFileReference section */
 		623DFEC92B0DF9360097FC04 /* ModelContainerDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelContainerDataManager.swift; sourceTree = "<group>"; };
 		623DFECD2B0DF95E0097FC04 /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
-		623DFECF2B0E00070097FC04 /* Prove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prove.swift; sourceTree = "<group>"; };
+		623DFECF2B0E00070097FC04 /* ViewProva.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewProva.swift; sourceTree = "<group>"; };
 		623DFED12B0E0E1A0097FC04 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		623DFED32B0E8CF80097FC04 /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
 		62913DFF2B038B4500EEFDAB /* AmericanoChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AmericanoChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62913E022B038B4500EEFDAB /* AmericanoChallengeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmericanoChallengeApp.swift; sourceTree = "<group>"; };
 		62913E042B038B4500EEFDAB /* AllNotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllNotesView.swift; sourceTree = "<group>"; };
@@ -38,7 +39,6 @@
 		62D3121F2B0B9AA7003C539E /* NotePreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotePreviewView.swift; sourceTree = "<group>"; };
 		62D312242B0B9DDA003C539E /* ImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageExtension.swift; path = "../../../../../../Library/Mobile Documents/com~apple~CloudDocs/.Trash/ImageExtension.swift"; sourceTree = "<group>"; };
 		62D312262B0BADCD003C539E /* NotesGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesGridView.swift; sourceTree = "<group>"; };
-		62D312282B0BAE46003C539E /* NotePreviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotePreviewViewModel.swift; sourceTree = "<group>"; };
 		62D3122B2B0BED54003C539E /* NoteGridViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteGridViewModel.swift; sourceTree = "<group>"; };
 		62D3122D2B0BF74A003C539E /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		62D3122F2B0DF1F9003C539E /* AllNotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllNotesViewModel.swift; sourceTree = "<group>"; };
@@ -93,7 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				62913E022B038B4500EEFDAB /* AmericanoChallengeApp.swift */,
-				623DFECF2B0E00070097FC04 /* Prove.swift */,
+				623DFECF2B0E00070097FC04 /* ViewProva.swift */,
 				62D312232B0B9B14003C539E /* Utils */,
 				62D3121E2B0B5FE6003C539E /* View */,
 				62D3122A2B0BAE4F003C539E /* ViewModel */,
@@ -124,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				62913E042B038B4500EEFDAB /* AllNotesView.swift */,
+				623DFED32B0E8CF80097FC04 /* NoteView.swift */,
 				62D312262B0BADCD003C539E /* NotesGridView.swift */,
 				62D3121F2B0B9AA7003C539E /* NotePreviewView.swift */,
 			);
@@ -143,7 +144,6 @@
 		62D3122A2B0BAE4F003C539E /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				62D312282B0BAE46003C539E /* NotePreviewViewModel.swift */,
 				62D3122B2B0BED54003C539E /* NoteGridViewModel.swift */,
 				62D3122F2B0DF1F9003C539E /* AllNotesViewModel.swift */,
 			);
@@ -222,15 +222,15 @@
 			files = (
 				62913E052B038B4500EEFDAB /* AllNotesView.swift in Sources */,
 				62913E072B038B4500EEFDAB /* Note.swift in Sources */,
-				623DFED02B0E00070097FC04 /* Prove.swift in Sources */,
+				623DFED02B0E00070097FC04 /* ViewProva.swift in Sources */,
 				62D312302B0DF1F9003C539E /* AllNotesViewModel.swift in Sources */,
 				62D3122C2B0BED54003C539E /* NoteGridViewModel.swift in Sources */,
 				62D312202B0B9AA7003C539E /* NotePreviewView.swift in Sources */,
 				62D312252B0B9DDA003C539E /* ImageExtension.swift in Sources */,
 				62D3122E2B0BF74A003C539E /* StringExtension.swift in Sources */,
 				62D312272B0BADCD003C539E /* NotesGridView.swift in Sources */,
-				62D312292B0BAE46003C539E /* NotePreviewViewModel.swift in Sources */,
 				623DFECA2B0DF9360097FC04 /* ModelContainerDataManager.swift in Sources */,
+				623DFED42B0E8CF80097FC04 /* NoteView.swift in Sources */,
 				62913E032B038B4500EEFDAB /* AmericanoChallengeApp.swift in Sources */,
 				623DFED22B0E0E1A0097FC04 /* DateExtension.swift in Sources */,
 			);

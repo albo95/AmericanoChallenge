@@ -15,7 +15,7 @@ struct AllNotesView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                NotesGridView(viewModel: NoteGridViewModel(notesPreviews: model.getNotesPreviewsGridSections()))
+                NotesGridView(viewModel: NoteGridViewModel(notes: model.getNotesPreviewsGridSections()))
             }
             .navigationTitle("Note")
             .navigationBarTitleDisplayMode(.large)
