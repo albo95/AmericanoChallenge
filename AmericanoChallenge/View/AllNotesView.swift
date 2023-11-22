@@ -40,7 +40,7 @@ struct AllNotesView: View {
             .navigationTitle("Note")
             .navigationBarTitleDisplayMode(.large)
             .navigationDestination(for: Note.self, destination: {
-                note in NoteView(note: note, path: .constant(NavigationPath()))
+                note in NoteView(note: note, path: $path)
             })
         }.searchable(text: $searchText)
             .background(Color.palette.background)

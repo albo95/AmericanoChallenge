@@ -13,7 +13,6 @@
 		623DFED42B0E8CF80097FC04 /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623DFED32B0E8CF80097FC04 /* NoteView.swift */; };
 		623DFED62B0E975E0097FC04 /* DrawingCanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623DFED52B0E975E0097FC04 /* DrawingCanvasViewController.swift */; };
 		623DFED92B0E97B90097FC04 /* DrawingCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623DFED82B0E97B90097FC04 /* DrawingCanvasView.swift */; };
-		623DFEDB2B0E99190097FC04 /* NoteToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623DFEDA2B0E99190097FC04 /* NoteToolbarView.swift */; };
 		623DFEDD2B0EC4DF0097FC04 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623DFEDC2B0EC4DF0097FC04 /* ColorExtension.swift */; };
 		62913E032B038B4500EEFDAB /* AmericanoChallengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62913E022B038B4500EEFDAB /* AmericanoChallengeApp.swift */; };
 		62913E052B038B4500EEFDAB /* AllNotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62913E042B038B4500EEFDAB /* AllNotesView.swift */; };
@@ -36,7 +35,6 @@
 		623DFED32B0E8CF80097FC04 /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
 		623DFED52B0E975E0097FC04 /* DrawingCanvasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingCanvasViewController.swift; sourceTree = "<group>"; };
 		623DFED82B0E97B90097FC04 /* DrawingCanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingCanvasView.swift; sourceTree = "<group>"; };
-		623DFEDA2B0E99190097FC04 /* NoteToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteToolbarView.swift; sourceTree = "<group>"; };
 		623DFEDC2B0EC4DF0097FC04 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		62913DFF2B038B4500EEFDAB /* AmericanoChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AmericanoChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62913E022B038B4500EEFDAB /* AmericanoChallengeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmericanoChallengeApp.swift; sourceTree = "<group>"; };
@@ -143,7 +141,6 @@
 				623DFED72B0E97890097FC04 /* UIKitViews */,
 				62913E042B038B4500EEFDAB /* AllNotesView.swift */,
 				623DFED32B0E8CF80097FC04 /* NoteView.swift */,
-				623DFEDA2B0E99190097FC04 /* NoteToolbarView.swift */,
 				623DFED82B0E97B90097FC04 /* DrawingCanvasView.swift */,
 				62D312262B0BADCD003C539E /* NotesGridView.swift */,
 				62D3121F2B0B9AA7003C539E /* NotePreviewView.swift */,
@@ -244,7 +241,6 @@
 				62913E072B038B4500EEFDAB /* Note.swift in Sources */,
 				623DFED02B0E00070097FC04 /* ViewProva.swift in Sources */,
 				62D312302B0DF1F9003C539E /* AllNotesViewModel.swift in Sources */,
-				623DFEDB2B0E99190097FC04 /* NoteToolbarView.swift in Sources */,
 				62D3122C2B0BED54003C539E /* NoteGridViewModel.swift in Sources */,
 				623DFEDD2B0EC4DF0097FC04 /* ColorExtension.swift in Sources */,
 				623DFED92B0E97B90097FC04 /* DrawingCanvasView.swift in Sources */,

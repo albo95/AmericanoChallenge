@@ -12,17 +12,28 @@ import SwiftData
 
 struct NoteView: View {
     var note: Note
-    @State var isDrawing: Bool = true
+    @State var isDrawing: Bool = false
     @Binding var path: NavigationPath
     
     var body: some View {
         NavigationStack {
             Text(note.date.getFormattedDateString()).font(.system(size: 14)).foregroundColor(.palette.secondaryTextColor)
           
-            
             DrawingCanvasView(isDrawing: $isDrawing).toolbar {
                 ToolbarItemGroup(placement: .bottomBar) {
-                    NoteToolbarViewItems(isDrawing: $isDrawing)
+                    Button(action: {
+                        isDrawing.toggle()
+                    }, label: {
+                        Image(systemName: "pencil.tip.crop.circle")})
+               
+                    Spacer()
+                    
+                    Button(action: {
+                        let note: Note = Note()
+                        path.removeLast(path.count)
+                        path.append(note)
+                    }, label: {
+                        Image(systemName: "square.and.pencil")})
                 }
                 
                 if isDrawing {
