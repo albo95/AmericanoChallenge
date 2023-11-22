@@ -25,6 +25,14 @@ final class Note {
         self.content = content
         self.previewImage = previewImage
     }
+    
+    func toNotePreview() -> NotePreviewViewModel {
+        guard let previewImage else {
+            //TODO: modificare questa riga di codice
+            return NotePreviewViewModel(previewImage: Image.getImageDataFromAsset("imgProva") ?? Data(), title: self.title, date: self.date)
+        }
+        return NotePreviewViewModel(previewImage: previewImage, title: self.title, date: self.date)
+    }
 }
 
 @Model

@@ -11,9 +11,9 @@ struct NotePreviewViewModel: Identifiable, Hashable {
     var id: UUID
     var previewImage: Data
     var title: String
-    var date: String
+    var date: Date
     
-    init(previewImage: Data, title: String, date: String) {
+    init(previewImage: Data, title: String, date: Date) {
         self.id = UUID()
         self.previewImage = previewImage
         self.title = title

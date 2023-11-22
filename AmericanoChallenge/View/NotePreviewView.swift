@@ -14,6 +14,7 @@ struct NotePreviewView: View {
     let textWidthSize: CGFloat = 85
     let previewImageWidthSize: CGFloat = 90
     let previewImageHeightSize: CGFloat = 80
+    let previewNoteHeightSize: CGFloat = 150
     
     var body: some View {
         VStack
@@ -31,17 +32,17 @@ struct NotePreviewView: View {
                 .font(.headline)
                 .lineLimit(2)
                 .frame(width: textWidthSize)
-            Text(model.date)
+            Text(model.date.getNotePreviewDateLabel())
                 .foregroundStyle(.secondaryText)
                 .font(.subheadline)
                 .lineLimit(1)
-        }.frame(width: previewImageWidthSize)
+        }.frame(width: previewImageWidthSize, height: previewNoteHeightSize, alignment: .top)
     }
 }
 
 #Preview {
     if let imgData = Image.getImageDataFromAsset("imgProva") {
-        return AnyView(NotePreviewView(model: NotePreviewViewModel(previewImage: imgData, title: "NoteNameeeeeeeee", date: "Yesterday")))
+        return AnyView(NotePreviewView(model: NotePreviewViewModel(previewImage: imgData, title: "Note", date: Date.createDate())))
     } else {
         return AnyView(Text("Preview not available"))
     }
