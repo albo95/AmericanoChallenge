@@ -21,7 +21,7 @@ struct AllNotesView: View {
             .toolbar {
                 ToolbarItemGroup(placement: .bottomBar){
                     Spacer()
-                    Text(getTabBarText()).font(.system(size: 12,weight: .semibold))
+                    Text(getTabBarText()).font(.system(size: 12)).foregroundColor(.palette.mainText)
                     Spacer()
                     Button(action: {
                         let note: Note = Note()
@@ -36,13 +36,14 @@ struct AllNotesView: View {
                     }, label: {
                         Image(systemName: "ellipsis.circle")})
                 }
-            }
+            }.foregroundColor(.palette.interaction)
             .navigationTitle("Note")
             .navigationBarTitleDisplayMode(.large)
             .navigationDestination(for: Note.self, destination: {
                 note in NoteView(note: note, path: .constant(NavigationPath()))
             })
-        } .searchable(text: $searchText) 
+        }.searchable(text: $searchText)
+            .background(Color.palette.background)
     }
     
     private func getTabBarText() -> String{

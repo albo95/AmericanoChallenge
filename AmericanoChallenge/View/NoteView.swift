@@ -17,7 +17,7 @@ struct NoteView: View {
     
     var body: some View {
         NavigationStack {
-            Text(note.date.getFormattedDateString())
+            Text(note.date.getFormattedDateString()).font(.system(size: 14)).foregroundColor(.palette.secondaryTextColor)
           
             
             DrawingCanvasView(isDrawing: $isDrawing).toolbar {
@@ -40,7 +40,7 @@ struct NoteView: View {
                         })
                     }
                 }
-            }
+            }.foregroundColor(.interaction)
         }
     }
 }

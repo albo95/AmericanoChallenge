@@ -27,7 +27,8 @@ struct NotesGridView: View {
                 columns: columns) {
                     ForEach(viewModel.sortedSectionKeys, id: \.self) { key in
                         Section(
-                            header:SectionHeaderView(title: key).padding(.top, sectionHeaderTopPadding))
+                            header:SectionHeaderView(title: key).padding(.top, sectionHeaderTopPadding).foregroundColor(.palette.mainText)
+                        )
                         {
                             ForEach(viewModel.notes[key] ?? [], id: \.self) { note in
                                 Button(action: { path.append(note) }) {
