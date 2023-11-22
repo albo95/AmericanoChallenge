@@ -42,7 +42,7 @@ struct NotePreviewView: View {
 
 #Preview {
     if let imgData = Image.getImageDataFromAsset("imgProva") {
-        return AnyView(NotePreviewView(model: NotePreviewViewModel(previewImage: imgData, title: "Note", date: Date.createDate())))
+        return AnyView(NotePreviewView(model: NotePreviewViewModel(previewImage: imgData, title: "Note", date: Date.createRandomDate())))
     } else {
         return AnyView(Text("Preview not available"))
     }

@@ -52,7 +52,7 @@ struct NotesGridView: View {
 
 #Preview {
     if let imgData = Image.getImageDataFromAsset("imgProva") {
-        return viewProva.notesGridProva(imgData: imgData)
+        return ViewProva.notesGridProva(imgData: imgData)
     } else {
         return AnyView(Text("Preview not available"))
     }

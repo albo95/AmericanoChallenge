@@ -15,9 +15,7 @@ struct AllNotesView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                if let imgData = Image.getImageDataFromAsset("imgProva") {
-                    viewProva.notesGridProva(imgData: imgData)
-                }
+                NotesGridView(viewModel: NoteGridViewModel(notesPreviews: model.getNotesPreviewsGridSections()))
             }
             .navigationTitle("Note")
             .navigationBarTitleDisplayMode(.large)

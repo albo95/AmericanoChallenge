@@ -8,6 +8,9 @@
 import Foundation
 import SwiftData
 
+//TODO: togliere
+import SwiftUI
+
 @Observable
 class AllNotesViewModel {
     @ObservationIgnored
@@ -19,6 +22,11 @@ class AllNotesViewModel {
         self.dataSource = modelContainerDataManager
         self.allNotes = modelContainerDataManager.fetchNotes()
         createNotesPreviews()
+        
+        //TODO: togliere
+        if let imgData = Image.getImageDataFromAsset("imgProva") {
+            allNotesPreviews = ViewProva.notesPreviewsProva(imgData: imgData)
+        }
     }
     
     private func createNotesPreviews() {
@@ -35,7 +43,19 @@ class AllNotesViewModel {
         dataSource.removeNote(allNotes[index])
     }
     
-    func getNotesPreviewsGridSections() -> [String : [NotePreviewViewModel]]? {
-        return nil
+    func getNotesPreviewsGridSections() -> [String: [NotePreviewViewModel]] {
+        var sections: [String: [NotePreviewViewModel]] = [:]
+
+        for notePreview in allNotesPreviews {
+            let sectionTitle = notePreview.date.getNotesGridSectionTitle()
+
+            if sections[sectionTitle] == nil {
+                sections[sectionTitle] = [notePreview]
+            } else {
+                sections[sectionTitle]?.append(notePreview)
+            }
+        }
+        return sections
     }
+
 }
