@@ -12,7 +12,7 @@ class NoteGridViewModel {
     var notes: [String: [Note]]
     
     let predefinedOrder = {
-        var predefinedOrder: [String] = [.today, .yesterday, .lastSevenDays, .lastThirtyDays]
+        var predefinedOrder: [String] = [.researchResults, .today, .yesterday, .lastSevenDays, .lastThirtyDays]
         predefinedOrder.append(contentsOf: String.monthsOfTheYear)
         return predefinedOrder
        }()

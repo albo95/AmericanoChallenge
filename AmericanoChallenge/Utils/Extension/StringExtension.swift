@@ -8,6 +8,7 @@
 import Foundation
 
 extension String {
+    static let researchResults: String = "Research results"
     static let today: String = "Today"
     static let yesterday: String = "Yesterday"
     static let lastSevenDays: String = "Last 7 days"

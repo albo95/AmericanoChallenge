@@ -84,6 +84,13 @@ extension Date {
         }
     }
     
+    func getFormattedDateString() -> String {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "it_IT")
+        formatter.dateFormat = "d MMMM yyyy 'alle ore' HH:mm"
+        let dateString = formatter.string(from: self)
+        return dateString
+    }
     
 }
 

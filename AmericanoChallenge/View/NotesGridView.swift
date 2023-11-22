@@ -9,10 +9,11 @@ import SwiftUI
 
 struct NotesGridView: View {
     var viewModel: NoteGridViewModel
-    
     let sectionHeaderTopPadding: CGFloat = 10
     let notesPreviewVerticalPadding: CGFloat = 5
     let verticalPadding: CGFloat = 30
+    @Binding var path: NavigationPath
+
     
     var body: some View {
         let columns = [
@@ -21,7 +22,7 @@ struct NotesGridView: View {
             GridItem(.flexible())
         ]
         
-        NavigationStack {
+        NavigationStack(path: $path) {
             LazyVGrid(
                 columns: columns) {
                     ForEach(viewModel.sortedSectionKeys, id: \.self) { key in
@@ -29,17 +30,14 @@ struct NotesGridView: View {
                             header:SectionHeaderView(title: key).padding(.top, sectionHeaderTopPadding))
                         {
                             ForEach(viewModel.notes[key] ?? [], id: \.self) { note in
-                                NavigationLink(value: note)
-                                {
+                                Button(action: { path.append(note) }) {
                                     NotePreviewView(note: note)
                                         .padding(.bottom, notesPreviewVerticalPadding).frame(alignment: .top)
                                 }
                             }
                         }
                     }
-                }.navigationDestination(for: Note.self, destination: {
-                    note in NoteView(note: note)
-                })
+                }
         }
         
     }

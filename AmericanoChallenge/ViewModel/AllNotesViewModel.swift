@@ -15,16 +15,16 @@ import SwiftUI
 class AllNotesViewModel {
     @ObservationIgnored
     private let dataSource: ModelContainerDataManager
-    private var allNotes: [Note] = []
+    var allNotes: [Note] = []
     
     init(modelContainerDataManager: ModelContainerDataManager = ModelContainerDataManager.shared) {
         self.dataSource = modelContainerDataManager
         self.allNotes = modelContainerDataManager.fetchNotes()
         
         //TODO: togliere
-        if let imgData = Image.getImageDataFromAsset("imgProva") {
-            allNotes = ViewProva.notesProva(imgData: imgData)
-        }
+//        if let imgData = Image.getImageDataFromAsset("imgProva") {
+//            allNotes = ViewProva.notesProva(imgData: imgData)
+//        }
     }
     
     func appendNote(_ note: Note) {
@@ -37,19 +37,27 @@ class AllNotesViewModel {
         dataSource.removeNote(allNotes[index])
     }
     
-    func getNotesPreviewsGridSections() -> [String: [Note]] {
+    func getNotesPreviewsGridSections(_ searchText: String = "") -> [String: [Note]] {
         var sections: [String: [Note]] = [:]
-
-        for note in allNotes {
-            let sectionTitle = note.date.getNotesGridSectionTitle()
-
-            if sections[sectionTitle] == nil {
-                sections[sectionTitle] = [note]
-            } else {
-                sections[sectionTitle]?.append(note)
+        
+        if searchText.isEmpty {
+            for note in allNotes {
+                let sectionTitle = note.date.getNotesGridSectionTitle()
+                
+                if sections[sectionTitle] == nil {
+                    sections[sectionTitle] = [note]
+                } else {
+                    sections[sectionTitle]?.append(note)
+                }
             }
+            return sections
+        } else {
+            let filteredNotes = allNotes.filter { note in
+                note.title.lowercased().contains(searchText.lowercased())
+            }
+            sections[.researchResults] = filteredNotes
+            return sections
         }
-        return sections
     }
 
 }

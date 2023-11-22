@@ -6,12 +6,13 @@
 //
 
 import Foundation
+import SwiftUI
 
 class ViewProva {
     static func notesGridProva (imgData: Data) -> NotesGridView {
         return NotesGridView(viewModel: NoteGridViewModel(notes: [.november: ViewProva.notesProva(imgData: imgData),
             .yesterday: ViewProva.notesProva(imgData: imgData),
-            .today: ViewProva.notesProva(imgData: imgData)]))}
+                                                                  .today: ViewProva.notesProva(imgData: imgData)]), path: .constant(NavigationPath()))}
     
     static func noteProva(imgData: Data) ->  Note {
         return Note(id: UUID(), title: "Note", date: Date.createRandomDate(), previewImage: imgData)

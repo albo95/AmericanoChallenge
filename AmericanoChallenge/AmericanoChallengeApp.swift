@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftData
+import Observation
 
 @main
 struct AmericanoChallengeApp: App {
@@ -27,6 +28,8 @@ struct AmericanoChallengeApp: App {
     var body: some Scene {
         WindowGroup {
             AllNotesView()
-        }.modelContext(modelContext)
+        }
+       .modelContext(modelContext)
+        
     }
 }

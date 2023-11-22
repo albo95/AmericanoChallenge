@@ -10,7 +10,7 @@ import SwiftData
 import SwiftUI
 
 @Model
-final class Note: Hashable {
+final class Note {
     @Attribute(.unique) var id = UUID()
     var title: String
     var date: Date
@@ -18,10 +18,10 @@ final class Note: Hashable {
     var content: [NoteElement]
     var previewImage: Data?
     
-    init(id: UUID, title: String = "", date: Date = Date.now, content: [NoteElement] = [], previewImage: Data? = nil) {
+    init(id: UUID = UUID(), title: String? = nil, date: Date = Date.createRandomDate(), content: [NoteElement] = [], previewImage: Data? = nil) {
         self.id = id
-        self.title = title
         self.date = date
+        self.title = title ?? "Nota del \(date.getFormattedDateString())"
         self.content = content
         self.previewImage = previewImage
     }
