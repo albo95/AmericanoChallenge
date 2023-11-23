@@ -12,44 +12,47 @@ import SwiftData
 
 struct NoteView: View {
     var note: Note
-    @State var isDrawing: Bool = false
-    @Binding var path: NavigationPath
+    @State var isDrawing: Bool = true
     
     var body: some View {
         NavigationStack {
             Text(note.date.getFormattedDateString()).font(.system(size: 14)).foregroundColor(.palette.secondaryTextColor)
-          
+            
             DrawingCanvasView(isDrawing: $isDrawing).toolbar {
                 ToolbarItemGroup(placement: .bottomBar) {
                     Button(action: {
                         isDrawing.toggle()
                     }, label: {
                         Image(systemName: "pencil.tip.crop.circle")})
-               
+                    
                     Spacer()
                     
                     Button(action: {
                         let note: Note = Note()
-                        path.removeLast(path.count)
-                        path.append(note)
+                       
                     }, label: {
                         Image(systemName: "square.and.pencil")})
                 }
                 
-                if isDrawing {
-                    ToolbarItem(placement: .topBarTrailing) {
-                        Button("Fine") {
-                            isDrawing = false
-                        }
+                ToolbarItemGroup(placement: .topBarTrailing) {
+                    
+                    Button(action: {}) {
+                        Image(systemName: "arrow.uturn.backward.circle")
                     }
-                } else {
-                    ToolbarItem(placement: .topBarTrailing) {
-                        Button(action: {
-                            //TODO: aggiungere azione bottone ell
-                        }, label: {
-                            Image(systemName: "ellipsis.circle")
-                        })
+                    
+                    Button(action: {}) {
+                        Image(systemName:"arrow.uturn.right.circle")
                     }
+                    
+                    Button(action: {}) {
+                        Image(systemName: "ellipsis.circle")
+                    }
+                    
+                    Button("Fine") {
+                        isDrawing = false
+                    }
+                    
+                 
                 }
             }.foregroundColor(.interaction)
         }
@@ -58,7 +61,7 @@ struct NoteView: View {
 
 #Preview {
     if let imgData = Image.getImageDataFromAsset("imgProva") {
-        return NoteView(note: ViewProva.noteProva(imgData: imgData), path: .constant(NavigationPath()))
+        return NoteView(note: ViewProva.noteProva(imgData: imgData))
     } else {
         return AnyView(Text("Preview not available"))
     }

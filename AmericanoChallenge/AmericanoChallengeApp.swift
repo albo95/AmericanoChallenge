@@ -27,9 +27,12 @@ struct AmericanoChallengeApp: App {
     
     var body: some Scene {
         WindowGroup {
+//            if let imgData = Image.getImageDataFromAsset("imgProva") {
+//                NoteView(note: ViewProva.noteProva(imgData: imgData), path: .constant(NavigationPath()))
+//            }
             AllNotesView()
         }
-       .modelContext(modelContext)
+        .modelContext(modelContext)
         
     }
 }

@@ -12,7 +12,6 @@ struct NotesGridView: View {
     let sectionHeaderTopPadding: CGFloat = 10
     let notesPreviewVerticalPadding: CGFloat = 5
     let verticalPadding: CGFloat = 30
-    @Binding var path: NavigationPath
 
     
     var body: some View {
@@ -22,23 +21,22 @@ struct NotesGridView: View {
             GridItem(.flexible())
         ]
         
-        NavigationStack(path: $path) {
-            LazyVGrid(
-                columns: columns) {
-                    ForEach(viewModel.sortedSectionKeys, id: \.self) { key in
-                        Section(
-                            header:SectionHeaderView(title: key).padding(.top, sectionHeaderTopPadding).foregroundColor(.palette.mainText)
-                        )
-                        {
-                            ForEach(viewModel.notes[key] ?? [], id: \.self) { note in
-                                Button(action: { path.append(note) }) {
-                                    NotePreviewView(note: note)
-                                        .padding(.bottom, notesPreviewVerticalPadding).frame(alignment: .top)
+        NavigationStack {
+                    LazyVGrid(columns: columns) {
+                        ForEach(viewModel.sortedSectionKeys, id: \.self) { key in
+                            Section(header: SectionHeaderView(title: key)
+                                    .padding(.top, sectionHeaderTopPadding)
+                                    .foregroundColor(.palette.mainText)) {
+                                ForEach(viewModel.notes[key] ?? [], id: \.self) { note in
+                                    NavigationLink(destination: NoteView(note: note)) {
+                                        NotePreviewView(note: note)
+                                            .padding(.bottom, notesPreviewVerticalPadding)
+                                            .frame(alignment: .top)
+                                    }
                                 }
                             }
                         }
                     }
-                }
         }
         
     }

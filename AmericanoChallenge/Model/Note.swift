@@ -18,12 +18,16 @@ final class Note {
     var content: [NoteElement]
     var previewImage: Data?
     
-    init(id: UUID = UUID(), title: String? = nil, date: Date = Date.createRandomDate(), content: [NoteElement] = [], previewImage: Data? = nil) {
+    init(id: UUID = UUID(), title: String? = nil, date: Date = Date.now, content: [NoteElement] = [], previewImage: Data? = nil) {
         self.id = id
         self.date = date
         self.title = title ?? "Nota del \(date.getFormattedDateString())"
         self.content = content
-        self.previewImage = previewImage
+        if previewImage == nil, let imgData = Image.getImageDataFromAsset("noteDefaultPreview") {
+            self.previewImage = imgData
+        } else {
+            self.previewImage = previewImage
+        }
     }
 }
 

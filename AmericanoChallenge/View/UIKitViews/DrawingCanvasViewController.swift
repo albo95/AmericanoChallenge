@@ -11,8 +11,12 @@ import PencilKit
 class DrawingCanvasViewController: UIViewController {
     public var isDrawing: Bool = false {
         didSet {
-            toolPicker.setVisible(isDrawing, forFirstResponder: canvas)
-            canvas.becomeFirstResponder()
+            toolPicker.setVisible(true, forFirstResponder: canvas)
+            if isDrawing {
+                canvas.becomeFirstResponder()
+            } else {
+                canvas.resignFirstResponder()
+            }     
         }
     }
     
@@ -44,7 +48,7 @@ class DrawingCanvasViewController: UIViewController {
             canvas.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
         
-        toolPicker.setVisible(isDrawing, forFirstResponder: canvas)
+        toolPicker.setVisible(true, forFirstResponder: canvas)
         toolPicker.addObserver(canvas)
         canvas.delegate = self
         canvas.becomeFirstResponder()

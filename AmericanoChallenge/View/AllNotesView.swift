@@ -10,38 +10,47 @@ import SwiftData
 
 struct AllNotesView: View {
     @State private var model: AllNotesViewModel = AllNotesViewModel()
-    @State var path: NavigationPath = NavigationPath()
+    //@State var path: [Note] = [Note]()
     @State private var searchText = ""
+    let sectionHeaderTopPadding: CGFloat = 10
+    let notesPreviewVerticalPadding: CGFloat = 5
+    let verticalPadding: CGFloat = 30
+    @State private var isNoteAdded: Bool = false
 
     var body: some View {
-        NavigationStack(path: $path) {
+        NavigationStack() {
+            
             ScrollView {
-                NotesGridView(viewModel: NoteGridViewModel(notes: model.getNotesPreviewsGridSections(searchText)), path: $path)
+                NavigationLink(destination: NoteView(note: model.allNotes.last ?? Note()), isActive: $isNoteAdded) {
+                               EmptyView()
+                           }
+                NotesGridView(viewModel: NoteGridViewModel(notes: model.getNotesPreviewsGridSections(searchText)))
             }
             .toolbar {
                 ToolbarItemGroup(placement: .bottomBar){
                     Spacer()
                     Text(getTabBarText()).font(.system(size: 12)).foregroundColor(.palette.mainText)
                     Spacer()
+                    
                     Button(action: {
-                        let note: Note = Note()
-                        model.appendNote(note)
-                        path.removeLast(path.count)
-                        path.append(note)
-                    }, label: {
-                        Image(systemName: "square.and.pencil")})
+                                    let note = Note()
+                                    model.appendNote(note)
+                                    isNoteAdded = true // Attiva la navigazione
+                                }, label: {
+                                    Image(systemName: "square.and.pencil")
+                                })
+                    
                 }
                 ToolbarItem(placement: .topBarTrailing){
                     Button(action: {
                     }, label: {
                         Image(systemName: "ellipsis.circle")})
                 }
+                
             }.foregroundColor(.palette.interaction)
             .navigationTitle("Note")
             .navigationBarTitleDisplayMode(.large)
-            .navigationDestination(for: Note.self, destination: {
-                note in NoteView(note: note, path: $path)
-            })
+        
         }.searchable(text: $searchText)
             .background(Color.palette.background)
     }
@@ -57,4 +66,16 @@ struct AllNotesView: View {
     AllNotesView()
 }
 
+struct SectionHeaderView: View{
+    var title: String
+    
+    var body: some View {
+        HStack{
+            Text(title)
+                .font(.system(size: 22))
+                .fontWeight(.semibold)
+            Spacer()
+        }.padding(.leading)
+    }
+}
 
